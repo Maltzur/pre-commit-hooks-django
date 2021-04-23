@@ -7,8 +7,8 @@
     pass_filenames: false
     require_serial: true
 -   id: check-unapplied-migrations
-    name: Check unapplied migrations with manage.py migrate --check
-    entry: python manage.py migrate --check
+    name: Check unapplied migrations with manage.py makemigrations --check
+    entry: python manage.py makemigrations --check
     language: system
     types: [python]
     pass_filenames: false
