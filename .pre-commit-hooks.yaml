@@ -3,14 +3,16 @@
     description: "Forbid untracked Django migrations"
     entry: check-untracked-migrations
     language: python
-    always_run: true
+    types: [python]
     pass_filenames: false
+    require_serial: true
 -   id: check-unapplied-migrations
     name: Check unapplied migrations with manage.py migrate --check
-    entry: sh -c 'python `find . -name "manage.py"` migrate --check'
-    pass_filenames: false
+    entry: python manage.py migrate --check
     language: system
-    always_run: true
+    types: [python]
+    pass_filenames: false
+    require_serial: true
 -   id: po-location-format
     name: Changes location format for .po files
     entry: po-location-format
